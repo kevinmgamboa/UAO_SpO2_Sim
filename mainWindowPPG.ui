@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1066</width>
+    <height>566</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>UAO SpO2 sim_v1.0</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+background-color:rgb(0, 0, 0);
+font-family: arial, verdana;
+}
+
+QPushButton{
+background-color:rgb(0, 0, 0);
+color:rgb(176, 176, 0);
+font-family: arial;
+font-size: 14px;
+}
+
+QLabel{
+color:rgb(176, 176, 0);
+font-family: arial;
+font-size: 14px;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLineEdit" name="showSpo2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>340</y>
+      <width>71</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+border:0;
+font-size: 38px;
+background-color: back;
+color:rgb(0, 85, 255);
+font-family:arial;
+}</string>
+    </property>
+    <property name="text">
+     <string>100</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+border:0;
+font-size: 18px;
+background-color: back;
+color: rgb(231, 243, 0);
+font-family:arial;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:600;&quot;&gt;% SpO2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>310</y>
+      <width>21</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+border:0;
+font-size: 18px;
+background-color: back;
+color: rgb(231, 243, 0);
+font-family:arial;
+}</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;50&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+border:0;
+font-size: 18px;
+background-color: back;
+color: rgb(231, 243, 0);
+font-family:arial;
+}</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;100&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>30</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+border:0;
+font-size: 18px;
+background-color: back;
+color: rgb(231, 243, 0);
+font-family:arial;
+}</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:600;&quot;&gt;HR&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>219</x>
+      <y>9</y>
+      <width>841</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="Layout_graphs">
+     <item row="1" column="1" colspan="2">
+      <widget class="GraphicsLayoutWidget" name="plt_2">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">GraphicsLayoutWidget{
+background-color: rgb(0, 0, 0);
+background-color:rgb(0, 0, 0);
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>410</y>
+      <width>181</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="Layout_controls">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="startButton">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+border-style: outset;
+border-width: 1px;
+border-color: rgb(0, 85, 255);
+font-size: 38px;
+background-color: back;
+color: rgb(231, 243, 0);
+font-family:arial;
+}</string>
+       </property>
+       <property name="text">
+        <string>Start</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="stopButton">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+border-style: outset;
+border-width: 1px;
+border-color: rgb(0, 85, 255);
+font-size: 38px;
+background-color: back;
+color: rgb(231, 243, 0);
+font-family:arial;
+}</string>
+       </property>
+       <property name="text">
+        <string>Stop</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QSlider" name="HRsl">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>80</y>
+      <width>16</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="spo2sl">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>80</y>
+      <width>16</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="showHR">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>340</y>
+      <width>71</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+border:0;
+font-size: 38px;
+background-color: back;
+color:rgb(0, 85, 255);
+font-family:arial;
+}</string>
+    </property>
+    <property name="text">
+     <string>80</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>180</y>
+      <width>361</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+border:0;
+font-size: 18px;
+background-color: back;
+color: rgb(231, 243, 0);
+font-family:arial;
+}</string>
+       </property>
+       <property name="text">
+        <string>R-AC</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLineEdit" name="showRac">
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+border:0;
+font-size: 20px;
+background-color: back;
+color:rgb(0, 85, 255);
+font-family:arial;
+}</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" alignment="Qt::AlignLeft">
+      <widget class="QLabel" name="label_5">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+border:0;
+font-size: 18px;
+background-color: back;
+color: rgb(231, 243, 0);
+font-family:arial;
+}</string>
+       </property>
+       <property name="text">
+        <string>Ratio</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLabel" name="label_9">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+border:0;
+font-size: 18px;
+background-color: back;
+color: rgb(231, 243, 0);
+font-family:arial;
+}</string>
+       </property>
+       <property name="text">
+        <string>R&amp;IR DC</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+border:0;
+font-size: 28px;
+background-color: back;
+color: rgb(231, 243, 0);
+font-family:arial;
+}</string>
+       </property>
+       <property name="text">
+        <string>------- =</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1" alignment="Qt::AlignLeft">
+      <widget class="QLineEdit" name="showR">
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+border:0;
+font-size: 20px;
+background-color: back;
+color:rgb(0, 85, 255);
+font-family:arial;
+}</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLineEdit" name="showDC">
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+border:0;
+font-size: 20px;
+background-color: back;
+color:rgb(0, 85, 255);
+font-family:arial;
+}</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLineEdit" name="showIRac">
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+border:0;
+font-size: 20px;
+background-color: back;
+color:rgb(0, 85, 255);
+font-family:arial;
+}</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_7">
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+border:0;
+font-size: 18px;
+background-color: back;
+color: rgb(231, 243, 0);
+font-family:arial;
+}</string>
+       </property>
+       <property name="text">
+        <string>IR-AC</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>330</y>
+      <width>841</width>
+      <height>194</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="GraphicsLayoutWidget" name="Rplt">
+       <property name="styleSheet">
+        <string notr="true">GraphicsLayoutWidget{
+	background-color: rgb(0, 0, 0);
+background-color:rgb(0, 0, 0);
+}</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="GraphicsLayoutWidget" name="plt">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">GraphicsLayoutWidget{
+	background-color: rgb(0, 0, 0);
+background-color:rgb(0, 0, 0);
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="GraphicsLayoutWidget" name="Rplt_2">
+       <property name="styleSheet">
+        <string notr="true">GraphicsLayoutWidget{
+	background-color: rgb(0, 0, 0);
+background-color:rgb(0, 0, 0);
+}</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>80</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+border:0;
+font-size: 18px;
+background-color: back;
+color: rgb(231, 243, 0);
+font-family:arial;
+}</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;250&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>310</y>
+      <width>21</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+border:0;
+font-size: 18px;
+background-color: back;
+color: rgb(231, 243, 0);
+font-family:arial;
+}</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;40&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>showSpo2</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label</zorder>
+   <zorder>label_4</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>HRsl</zorder>
+   <zorder>spo2sl</zorder>
+   <zorder>showHR</zorder>
+   <zorder>label_10</zorder>
+   <zorder>label_11</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1066</width>
+     <height>18</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>GraphicsLayoutWidget</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">pyqtgraph</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
