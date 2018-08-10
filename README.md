@@ -1,7 +1,7 @@
 # UAO_SpO2_Sim 
-The Open Source user interface (UI) for a SpO2 simulator, named as UAO_SpO2_Sim, it's a project that was born in 2017 in the Research Group in Biomedical Engineering, GBIO, at the Autonomous University of the West (Universidad Autónoma de Occidente), in Cali Colombia. 
+The Open Source user interface (UI) for a SpO2 simulator, named as UAO_SpO2_Sim, it's a project that was born in 2017 in the Research Group in Biomedical Engineering, GBIO, at the Autonomous University of the West (Universidad Autónoma de Occidente), in Cali Colombia.
 
-The paper regarding this project is about to be publish by the IEEE at the end of August 2018. There you can find more information about the device and their initial authors. 
+The paper regarding this 1st version of the project is about to be publish by the IEEE at the end of August 2018. There you can find more information about the device and their initial authors. 
 
 Software Requirements
 
