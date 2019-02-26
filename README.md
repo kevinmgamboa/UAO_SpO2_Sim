@@ -25,6 +25,8 @@ Secondly, we need to ensure that we have installed the next python libraries (es
 * sys
 * time
 
+Please make sure all libraries get install in Python 3
+
 ## Files Description
 * "mainWindowPPG.py" contains the main code of the GUI
 * "mainWindowPPG.ui" contains the GUI developed in the software Qt. 
