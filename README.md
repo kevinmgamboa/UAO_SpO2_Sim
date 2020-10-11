@@ -13,7 +13,10 @@ This project contains software and hardware. You will find in this Github just t
 
 ## Software Requirements
 
-The quickest way requires to have installed Spyder 3.2.4 (or a higher version) and Qt Designer 5.2.1 (or a higher version).
+The quickest way is to install the last version of Anaconda from its official site
+* https://docs.anaconda.com/anaconda/install/
+
+This project was developed using Spyder 3.2.4 and Qt Designer 5.2.1 So any higher version should work properly.
 Secondly, we need to ensure that we have installed the next python libraries (especially the first two, given that the rest are installed with spyder):
 
 * pyqtgraph
