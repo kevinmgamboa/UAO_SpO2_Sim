@@ -1,12 +1,16 @@
 """
-Example to plot data from a function in real time
-Ref: https://github.com/ssepulveda
-Ref: https://github.com/ssepulveda/RTGraph/tree/oldRTGraph
+UAO SpO2 Simulator GUI - Hardware Required !
+-------------------------------------
 Created on Thu Dec 21 12:07:49 2017
 by the author: Kevin Machado Gamboa
-Ref: https://github.com/LatinAmericanProgramer/PyQtGraph-real-time-plotting-RTgraph-modified-version
-Contct: ing.kevin@hotmail.com
-Modified on Sat Jan 06 08:50:23 2018
+Contact: ing.kevin@hotmail.com
+Modified on Sun Oct 11 10:29:39 2020
+------------------------------------
+REFERENCES: 
+    [1] Development of a Low-Cost Pulse Oximeter Simulator for Educational Purposes
+    https://github.com/kevinmgamboa/UAO_SpO2_Sim
+    [2] Sebastian Sepulveda - plot data from a function in real time 
+    https://github.com/ssepulveda/RTGraph/tree/oldRTGraph
 """
 import sys
 import numpy as np
@@ -17,10 +21,8 @@ from collections import deque
 from multiprocessing import Queue
 # Librery for the management of Qt v5. UI platform
 from PyQt5.uic import loadUi
-from PyQt5 import QtWidgets, QtCore
+from PyQt5 import QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow, QSlider
-# graphics and GUI library
-from pyqtgraph import GraphicsLayoutWidget
 
 ADC.setup(0x48, 0x4c)
 # @brief Buffer size for the data (number of points in the plot)
@@ -110,7 +112,7 @@ class mainWindow(QMainWindow):
         self.dataR.append(self.sR)
         self.dataIR.append(self.sIR)
 
-       ADC.write(yR,yIR)
+        ADC.write(yR,yIR)
         # Draw new data
         self._plt_2.clear()
         self._plt_2.plot(x=list(self.TIME)[-PLOT_UPDATE_POINTS:], y=list(self.dataR)[-PLOT_UPDATE_POINTS:], pen=self.plot_colors[1])
