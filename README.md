@@ -29,7 +29,7 @@ Secondly, we need to ensure that we have installed the next python libraries:
 * time
 
 Please make sure all libraries get install in Python 3. Note that all the necessary libraries are included in Anaconda except pyqtgraph. To install pyqtgraph
-in Anaconda environment you can try typing: "conda install -c anaconda pyqtgraph"; or visit http://www.pyqtgraph.org/
+in Anaconda environment you can try typing: `<conda install -c anaconda pyqtgraph>`; or visit http://www.pyqtgraph.org/
 
 ## Files Description
 * "mainWindowPPG.py" contains the main code of the GUI
