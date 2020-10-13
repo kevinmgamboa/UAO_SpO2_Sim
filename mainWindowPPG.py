@@ -11,6 +11,7 @@ REFERENCES:
     https://github.com/kevinmgamboa/UAO_SpO2_Sim
     [2] Sebastian Sepulveda - plot data from a function in real time 
     https://github.com/ssepulveda/RTGraph/tree/oldRTGraph
+    [3] Qt for Python - https://doc.qt.io/qtforpython/
 """
 # -----------------------------------------------------------------------------
 #                             Libraries Needed
@@ -43,8 +44,9 @@ class mainWindow(QMainWindow):
         # Loads an .ui file & configure UI
         loadUi("mainWindowPPG.ui",self)
         self.setupUI()   
-        # Shared variables, initial values
-        self.queue = Queue(N_SAMPLES)
+        # ---------------------------------------------------------- # 
+        #               Shared variables, initial values
+        # ---------------------------------------------------------- #
         self.dataR = deque([], maxlen=N_SAMPLES)
         self.dataIR = deque([], maxlen=N_SAMPLES)
         self.TIME = deque([], maxlen=N_SAMPLES)
@@ -57,13 +59,14 @@ class mainWindow(QMainWindow):
         self.ampIR = 0.270      # amplitud for InfraRed signal
         self.minR = 1.45   # Desplacement from zero for Red signal
         self.minIR = 1.45   # Desplacement from zero for Red signal
-
+        # ---------------------------------------------------------- # 
+        #                Running GUI Configurations
+        # ---------------------------------------------------------- #
         self._configure_plot()
-        # UI connectors
+        # Sliders
         self.HRsl.valueChanged.connect(self.spo2sl_change)
         self.spo2sl.valueChanged.connect(self.spo2sl_change)        
-        # Configurations
-        
+        # Other Configurations        
         self._enable_ui(True)        
         self._configure_timers()
         self.buttons()
@@ -251,7 +254,6 @@ class mainWindow(QMainWindow):
         It generates a t0 time and activates the Qt timer which connects to update_plot
         :return:
         """
-        self.stop()
         self._plt_2.clear()
         self._enable_ui(False)
         self.timestamp= time()

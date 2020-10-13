@@ -17,9 +17,9 @@ The quickest way is to install the last version of Anaconda from its official si
 * https://docs.anaconda.com/anaconda/install/
 
 This project was developed using Spyder 3.2.4 and Qt Designer 5.2.1 So any higher version should work properly.
-Secondly, we need to ensure that we have installed the next python libraries (especially the first two, given that the rest are installed with spyder):
+Secondly, we need to ensure that we have installed the next python libraries:
 
-* pyqtgraph
+* pyqtgraph   ---->    (Not included in Anaconda)
 * PyQt5
 * multiprocessing
 * scipy
@@ -28,7 +28,8 @@ Secondly, we need to ensure that we have installed the next python libraries (es
 * sys
 * time
 
-Please make sure all libraries get install in Python 3
+Please make sure all libraries get install in Python 3. Note that all the necessary libraries are included in Anaconda except pyqtgraph. To install pyqtgraph
+in Anaconda environment you can try typing: "conda install -c anaconda pyqtgraph"; or visit http://www.pyqtgraph.org/
 
 ## Files Description
 * "mainWindowPPG.py" contains the main code of the GUI
